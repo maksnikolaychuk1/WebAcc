@@ -31,6 +31,14 @@ sliderElement.addEventListener('keydown', (event) => {
             updatesSliderValue(sliderElement, currentValue + 1);
             event.preventDefault();
             break;
+        case 'PageUp':
+            updatesSliderValue(sliderElement, currentValue + 10);
+            event.preventDefault();
+            break;
+        case 'PageDown':
+            updatesSliderValue(sliderElement, currentValue - 10);
+            event.preventDefault();
+            break;
         case 'Home':
             updatesSliderValue(sliderElement, sliderElement.getAttribute('aria-valuemin'));
             event.preventDefault();
