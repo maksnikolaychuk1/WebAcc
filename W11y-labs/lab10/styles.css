@@ -1,0 +1,25 @@
+[role="slider"] {
+    width: 24px;
+    height: 24px;
+    background-color: blue;
+    border-radius: 50%;
+    position: absolute;
+    cursor: grab;
+    top: -8px;
+    transition: all 0.2s ease;
+}
+
+[role="slider"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(0, 0, 255, 0.5);
+}
+
+.slider-rail {
+    margin: 16px 0;
+    width: 200px;
+    height: 12px;
+    background-color: darkgray;
+    border-radius: 4px;
+    position: relative;
+    cursor: pointer;
+}

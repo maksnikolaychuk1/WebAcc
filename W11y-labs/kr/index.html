@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accordion</title>
+</head>
+<body>
+  <div class="accordion">
+    <h3>
+      <button
+        id="accordion-header-1"
+        class="acc-header"
+        type="button"
+        aria-expanded="false"
+        aria-controls="panel-1"
+      >
+        Секція 1
+      </button>
+    </h3>
+    <div
+      id="panel-1"
+      class="acc-content"
+      role="region"
+      aria-labelledby="accordion-header-1"
+      hidden
+    >
+      Текст 1
+    </div>
+
+    <h3>
+      <button
+        id="accordion-header-2"
+        class="acc-header"
+        type="button"
+        aria-expanded="false"
+        aria-controls="panel-2"
+      >
+        Секція 2
+      </button>
+    </h3>
+    <div
+      id="panel-2"
+      class="acc-content"
+      role="region"
+      aria-labelledby="accordion-header-2"
+      hidden
+    >
+      Текст 2
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

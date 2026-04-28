@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Tabs + Modal (A11y)</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<h1>Практична робота: Tabs + Modal</h1>
+
+<!-- КНОПКА МОДАЛКИ -->
+<button id="open-dialog-btn" aria-haspopup="dialog">
+  Відкрити модальне вікно
+</button>
+
+<main id="main-content">
+
+  <!-- TABS -->
+  <div class="tabs">
+
+    <div role="tablist" aria-label="Категорії">
+
+      <button role="tab" id="tab-1" aria-selected="true" aria-controls="panel-1" tabindex="0">
+        Музика
+      </button>
+
+      <button role="tab" id="tab-2" aria-selected="false" aria-controls="panel-2" tabindex="-1">
+        Фільми
+      </button>
+
+      <button role="tab" id="tab-3" aria-selected="false" aria-controls="panel-3" tabindex="-1">
+        Книги
+      </button>
+
+    </div>
+
+    <div role="tabpanel" id="panel-1" aria-labelledby="tab-1">
+      <p>Контент про музику</p>
+    </div>
+
+    <div role="tabpanel" id="panel-2" aria-labelledby="tab-2" hidden>
+      <p>Контент про фільми</p>
+    </div>
+
+    <div role="tabpanel" id="panel-3" aria-labelledby="tab-3" hidden>
+      <p>Контент про книги</p>
+    </div>
+
+  </div>
+
+</main>
+
+<!-- MODAL -->
+<div id="modal"
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="modal-title"
+     aria-describedby="modal-desc"
+     tabindex="-1"
+     hidden>
+
+  <div class="modal-content">
+    <h2 id="modal-title">Редагування профілю</h2>
+    <p id="modal-desc">Заповніть форму</p>
+
+    <input type="text" placeholder="Ім'я">
+    <input type="email" placeholder="Email">
+
+    <button>Зберегти</button>
+    <button id="close-btn">Закрити</button>
+  </div>
+
+</div>
+</body>
+<script src="script.js"></script>
+</html>
