@@ -1,11 +1,9 @@
-import React from 'react';
 import A11yPanel from './A11yPanel';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      {/* ПАНЕЛЬ МАЄ БУТИ ПЕРШОЮ В КОДІ ДЛЯ ПРАВИЛЬНОГО TAB-ORDER */}
       <A11yPanel />
 
       <header>
