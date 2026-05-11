@@ -1,31 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lab10</title>
+    <title>Lab 10. Кастомні елементи керування</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <main>
-        <h1>Lab10. Робота з кастомними слайдерами</h1>
-        <div class="slider-container">
-            <label for="slider1">Volume:</label>
-            <input type="range" id="slider1" class="slider" min="0" max="100" value="50">
-            <div aria-labelledby="volume-slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0">
-            </div>
-            <div>
-                <h3 id="volume-label">Volume:</h3>
-                <div id="volume-rail" class="slider-rail">
-                <div id="volume-slider" role="slider" aria-labelledby="volume-label" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0">
-                </div>
-                </div>
-                <div role="volume-label" aria-labelledby="volume-slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0"></div>
-                <div id="volume-value">
-                    Volume is: 50%
+        <h1>Lab 10. Робота з кастомними слайдерами та перемикачами</h1>
+
+        <section class="control-group">
+            <h3 id="volume-label">Гучність:</h3>
+            <div id="volume-rail" class="slider-rail" onclick="handleRailClick(event, 'volume-slider')">
+                <div id="volume-slider" 
+                     role="slider" 
+                     aria-labelledby="volume-label" 
+                     aria-valuemin="0" 
+                     aria-valuemax="100" 
+                     aria-valuenow="50" 
+                     tabindex="0" 
+                     class="slider-thumb">
                 </div>
             </div>
-        </div>
+            <div id="volume-value" aria-live="polite">Гучність: 50%</div>
+        </section>
+
+        <section class="control-group">
+            <h3 id="day-label">День тижня:</h3>
+            <div id="day-rail" class="slider-rail" onclick="handleRailClick(event, 'day-slider')">
+                <div id="day-slider" 
+                     role="slider" 
+                     aria-labelledby="day-label" 
+                     aria-valuemin="1" 
+                     aria-valuemax="7" 
+                     aria-valuenow="1"
+                     aria-valuetext="Понеділок"
+                     tabindex="0" 
+                     class="slider-thumb">
+                </div>
+            </div>
+            <div id="day-value" aria-live="polite">День: Понеділок</div>
+        </section>
+
+        <section class="control-group">
+            <h3 id="theme-label">Темна тема</h3>
+            <div id="theme-switch" 
+                 role="switch" 
+                 aria-checked="false" 
+                 aria-labelledby="theme-label" 
+                 tabindex="0" 
+                 class="custom-switch">
+            </div>
+        </section>
+
+        <section class="control-group">
+            <div role="group" aria-labelledby="settings-group-label">
+                <h3 id="settings-group-label">Налаштування смартфона</h3>
+                
+                <div class="switch-row">
+                    <span id="notif-label">Сповіщення</span>
+                    <div role="switch" aria-checked="true" aria-labelledby="notif-label" tabindex="0" class="custom-switch settings-switch"></div>
+                </div>
+                
+                <div class="switch-row">
+                    <span id="sound-label">Звук</span>
+                    <div role="switch" aria-checked="true" aria-labelledby="sound-label" tabindex="0" class="custom-switch settings-switch"></div>
+                </div>
+
+                <div class="switch-row">
+                    <span id="vibro-label">Вібрація</span>
+                    <div role="switch" aria-checked="false" aria-labelledby="vibro-label" tabindex="0" class="custom-switch settings-switch"></div>
+                </div>
+            </div>
+        </section>
     </main>
     <script src="script.js"></script>
 </body>

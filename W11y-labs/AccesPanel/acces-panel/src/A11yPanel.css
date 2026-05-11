@@ -1,0 +1,160 @@
+/* Базові CSS-змінні для типографіки */
+:root {
+  --a11y-font-size-multiplier: 1;
+  --a11y-line-height: initial;
+  --a11y-letter-spacing: initial;
+  --a11y-text-align: initial;
+  --a11y-text-transform: initial;
+}
+
+/* Застосування типографіки до всіх елементів, якщо панель активована */
+body.a11y-typography-active * {
+  font-size: calc(1rem * var(--a11y-font-size-multiplier)) !important;
+  line-height: var(--a11y-line-height) !important;
+  letter-spacing: var(--a11y-letter-spacing) !important;
+  text-align: var(--a11y-text-align) !important;
+  text-transform: var(--a11y-text-transform) !important;
+}
+
+/* 2. Кольорові та контрастні налаштування */
+body.a11y-high-contrast {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+body.a11y-high-contrast * {
+  background-color: #000 !important;
+  color: #fff !important;
+  border-color: #fff !important;
+}
+
+body.a11y-invert {
+  filter: invert(100%) !important;
+  background-color: #fff; /* Основа для правильної інверсії */
+}
+
+body.a11y-monochrome {
+  filter: grayscale(100%) !important;
+}
+
+body.a11y-desaturate {
+  filter: saturate(50%) !important;
+}
+
+/* 3. Допоміжні інструменти навігації */
+body.a11y-highlight-links a, 
+body.a11y-highlight-links button {
+  background-color: #ff0 !important;
+  color: #000 !important;
+  outline: 2px solid #f00 !important;
+  text-decoration: underline !important;
+}
+
+body.a11y-pause-animations * {
+  animation: none !important;
+  transition: none !important;
+}
+
+body.a11y-big-cursor * {
+  cursor: zoom-in !important; /* Імітація великого курсора для простоти */
+}
+
+/* СТИЛІ САМОЇ ПАНЕЛІ */
+.a11y-panel-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+.a11y-trigger-btn {
+  background: #0056b3;
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  font-size: 24px;
+}
+
+.a11y-panel {
+  position: absolute;
+  bottom: 60px;
+  right: 0;
+  width: 320px;
+  background: white;
+  border: 2px solid #333;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  max-height: 80vh;
+  overflow-y: auto;
+  color: #333;
+}
+
+/* Фокус для доступності панелі (Contrast ratio) */
+.a11y-panel button:focus,
+.a11y-trigger-btn:focus {
+  outline: 3px solid #ff9900;
+  outline-offset: 2px;
+}
+
+.a11y-panel h2 {
+  margin-top: 0;
+  font-size: 1.2rem;
+}
+
+#a11y-panel-title {
+  color: #212529 !important; /* Дуже темний колір для максимального контрасту */
+  font-weight: 800;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+  border-bottom: 2px solid #0056b3; /* Додамо лінію для візуального розділення */
+  padding-bottom: 10px;
+}
+
+.a11y-section {
+  margin-bottom: 20px;
+}
+
+.a11y-section h3 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+}
+
+.a11y-btn {
+  display: block;
+  width: 100%;
+  margin-bottom: 8px;
+  padding: 10px; 
+  background: #e9ecef; /* Світло-сірий фон */
+  color: #212529 !important; /* Жорстко задаємо дуже темний колір тексту */
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: left;
+  font-weight: bold; /* Робимо текст трохи товщим для кращої читабельності */
+  transition: background 0.2s;
+}
+
+.a11y-btn:hover {
+  background: #dee2e6; /* Легка зміна фону при наведенні миші */
+}
+
+.a11y-btn.active {
+  background: #0d6efd; /* Насичений синій для активного стану */
+  color: #ffffff !important; /* Білий текст */
+  border-color: #0a58ca;
+}
+
+.a11y-close-btn {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
