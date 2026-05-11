@@ -1,0 +1,63 @@
+body {
+  font-family: Arial, sans-serif;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+fieldset {
+  border: 2px solid #ccc;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.form-control {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input, select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #767676;
+  border-radius: 4px;
+}
+
+.hint {
+  font-size: 0.9em;
+  color: #555;
+  margin: 5px 0 0 0;
+}
+
+.error-msg {
+  color: #d32f2f; /* Контрастний колір */
+  margin: 5px 0 0 0;
+}
+
+.error-msg[hidden] {
+  display: none;
+}
+
+/* Візуальна індикація помилки через колір та межу */
+input[aria-invalid="true"], 
+select[aria-invalid="true"] {
+  border: 2px solid #d32f2f;
+  background-color: #fdecea;
+}
+
+/* Додавання текстового маркера (не лише колір) */
+[aria-invalid="true"] + .hint + .error-msg::before,
+[aria-invalid="true"] + .error-msg::before {
+  content: "Помилка: ";
+  font-weight: bold;
+}
+
+#form-summary {
+  margin: 20px 0;
+  font-weight: bold;
+  color: #d32f2f;
+}
